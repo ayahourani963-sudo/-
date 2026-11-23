@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لقيتها – منصة المفقودات والموجودات السورية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="bar">
+  <a class="logo" href="#signup"><b>🔍</b> لقيتها</a>
+  <nav>
+    <a href="#notifications">🔔 الإشعارات<span class="dot" id="cnt"></span></a>
+    <a class="btn ghost" href="#login">تسجيل الدخول</a>
+    <a class="btn" href="#signup">إنشاء حساب جديد</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- صفحة (1): إنشاء حساب جديد -->
+<section data-p="signup">
+  <div class="box wide">
+    <h1>إنشاء حساب جديد</h1><div class="muted">انضم إلى المجتمع وساعد في إعادة الأمانات</div>
+    <form id="fs" novalidate>
+      <div class="row">
+        <div><label>الاسم الأول</label><input id="s1" required></div>
+        <div><label>الكنية</label><input id="s2" required></div>
+      </div>
+      <div class="row">
+        <div><label>رقم الهاتف</label><input id="s3" type="tel" inputmode="tel" placeholder="09XXXXXXXX" dir="ltr" style="text-align:right"></div>
+        <div><label>البريد الإلكتروني</label><input id="s4" type="email" placeholder="name@mail.com" dir="ltr" style="text-align:right"></div>
+      </div>
+      <label>المحافظة</label>
+      <select id="s5"><option value="">اختر المحافظة</option><option>دمشق</option><option>ريف دمشق</option><option>حلب</option><option>حمص</option><option>حماة</option><option>اللاذقية</option><option>طرطوس</option><option>إدلب</option><option>درعا</option><option>السويداء</option><option>القنيطرة</option><option>دير الزور</option><option>الرقة</option><option>الحسكة</option></select>
+      <div class="row">
+        <div><label>كلمة المرور</label><input id="s6" type="password" minlength="6"></div>
+        <div><label>تأكيد كلمة المرور</label><input id="s7" type="password"></div>
+      </div>
+      <div class="err" id="e1"></div>
+      <button class="btn full" type="submit">إنشاء الحساب</button>
+    </form>
+    <div class="alt">لديك حساب؟ <a href="#login">تسجيل الدخول</a></div>
+  </div>
+</section>
+
+<!-- صفحة (2): تسجيل الدخول -->
+<section data-p="login" hidden>
+  <div class="box">
+    <h1>تسجيل الدخول</h1><div class="muted">أهلاً بعودتك</div>
+    <form id="fl" novalidate>
+      <label>رقم الهاتف أو البريد الإلكتروني</label><input id="l1" dir="ltr" style="text-align:right">
+      <label>كلمة المرور</label><input id="l2" type="password">
+      <div class="err" id="e2"></div>
+      <button class="btn full" type="submit">دخول</button>
+    </form>
+    <div class="alt">ليس لديك حساب؟ <a href="#signup">إنشاء حساب جديد</a></div>
+  </div>
+</section>
+
+<!-- صفحة (3): الإشعارات -->
+<section data-p="notifications" hidden>
+  <h2 style="margin-top:6px">🔔 الإشعارات</h2>
+  <div class="tabs" id="tabs">
+    <button class="on" data-f="all">الكل</button><button data-f="match">المطابقات</button><button data-f="comment">التعليقات</button><button data-f="msg">الرسائل</button>
+    <button style="margin-inline-start:auto" id="readall">تعليم الكل كمقروء</button>
+  </div>
+  <div id="list"></div>
+</section>
+
+<!-- صفحة (4): الإجابة عن أسئلة التحقق من الملكية -->
+<section data-p="verify" hidden>
+  <div class="box wide">
+    <div id="vform">
+      <h1>التحقق من الملكية</h1>
+      <div class="muted">أجب عن الأسئلة التالية بدقة ليتأكد صاحب البلاغ أن الغرض لك.</div>
+      <div class="card" style="margin-top:14px;display:flex;gap:12px;align-items:center">
+        <div class="ic">👛</div>
+        <div><span class="tag found">موجود</span> <b>محفظة جلدية سوداء</b><div class="muted">📍 دمشق – المزة · بلاغ رقم #4821</div></div>
+      </div>
+      <div class="note">⚠️ لن تظهر لك تفاصيل الغرض الكاملة. إجاباتك تُرسل لصاحب البلاغ فقط.</div>
+      <form id="fv" novalidate>
+        <div class="q"><b>السؤال ١:</b> ما لون البطانة الداخلية للمحفظة؟<textarea id="a1" rows="2" placeholder="اكتب إجابتك"></textarea></div>
+        <div class="q"><b>السؤال ٢:</b> كم بطاقة أو وثيقة كانت بداخلها وما هي؟<textarea id="a2" rows="2" placeholder="اكتب إجابتك"></textarea></div>
+        <div class="q"><b>السؤال ٣:</b> ما المبلغ التقريبي الذي كان فيها؟
+          <select id="a3"><option value="">اختر</option><option>أقل من ٥٠ ألف ل.س</option><option>٥٠ – ٢٠٠ ألف ل.س</option><option>أكثر من ٢٠٠ ألف ل.س</option><option>لا شيء</option></select></div>
+        <div class="q"><b>السؤال ٤:</b> هل من علامة مميزة أخرى؟ <span class="muted">(اختياري)</span><textarea id="a4" rows="2"></textarea></div>
+        <label>أين ومتى فقدتها؟</label><input id="a5" placeholder="مثال: سوق الحميدية، الخميس مساءً">
+        <div class="err" id="e3"></div>
+        <button class="btn full" type="submit">إرسال الإجابات</button>
+      </form>
+    </div>
+    <div id="vok" class="ok" hidden>
+      <div class="big">✅</div><h1>تم إرسال إجاباتك</h1>
+      <p class="muted">سيراجعها صاحب البلاغ وسنرسل لك إشعاراً بالنتيجة.</p>
+      <a class="btn" href="#notifications">العودة إلى الإشعارات</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© ٢٠٢٦ لقيتها – منصة المفقودات والموجودات السورية · معاً نُعيد الأمانات</footer>
+<div class="toast" id="toast" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>

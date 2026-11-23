@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل غرض مفقود | المفقودات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="reports.html" class="brand">
+                <span class="brand-icon">م</span>
+                <span class="brand-name"><strong>المفقودات</strong><small>Lost &amp; Found</small></span>
+            </a>
+            <nav class="nav-links">
+                <a href="reports.html">الرئيسية</a>
+                <a href="reports.html">البلاغات</a>
+                <a href="losts.html" class="current">تسجيل مفقود</a>
+                <a href="found.html">تسجيل معثور عليه</a>
+            </nav>
+            <div class="nav-tools"><a href="#" class="nav-login">حسابي</a></div>
+        </div>
+    </header>
+
+    <main class="container page">
+        <a href="reports.html" class="breadcrumb">الرئيسية ← تسجيل غرض مفقود</a>
+        <section class="page-heading">
+            <div class="heading-row">
+                <div>
+                    <h1>تسجيل غرض مفقود</h1>
+                    <p>أدخل المعلومات التي تساعد الآخرين على التعرف على الغرض الذي فقدته.</p>
+                </div>
+                <span class="badge badge-lost">غرض مفقود</span>
+            </div>
+        </section>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+            <section class="card">
+                <h2 class="card-title">معلومات الغرض</h2>
+                <p class="card-description">املأ المعلومات الأساسية عن الغرض المفقود.</p>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="item-type">نوع الغرض <span class="required">*</span></label>
+                        <select id="item-type" name="itemType" required>
+                            <option value="">اختر نوع الغرض</option>
+                            <option value="phone">هاتف</option><option value="wallet">محفظة</option>
+                            <option value="keys">مفاتيح</option><option value="bag">حقيبة</option>
+                            <option value="documents">وثائق</option><option value="electronics">إلكترونيات</option>
+                            <option value="clothing">ملابس</option><option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="item-name">اسم الغرض</label>
+                        <input type="text" id="item-name" name="itemName" placeholder="مثال: هاتف سامسونغ">
+                    </div>
+                    <div class="field">
+                        <label for="item-color">اللون <span class="required">*</span></label>
+                        <input type="text" id="item-color" name="color" placeholder="مثال: أسود" required>
+                    </div>
+                    <div class="field">
+                        <label for="lost-date">تاريخ الفقدان <span class="required">*</span></label>
+                        <input type="date" id="lost-date" name="lostDate" required>
+                    </div>
+                    <div class="field full">
+                        <label for="description">وصف الغرض <span class="required">*</span></label>
+                        <textarea id="description" name="description" placeholder="اكتب وصفًا واضحًا للغرض..." required></textarea>
+                    </div>
+                    <div class="field full">
+                        <label for="distinctive-marks">العلامات المميزة</label>
+                        <textarea id="distinctive-marks" name="distinctiveMarks" placeholder="علامات أو تفاصيل خاصة تساعد على التعرف عليه..."></textarea>
+                    </div>
+                    <div class="field full">
+                        <label for="lost-location">مكان الفقدان <span class="required">*</span></label>
+                        <input type="text" id="lost-location" name="lostLocation" placeholder="المدينة، الحي، أو المكان الذي فقدت فيه الغرض" required>
+                    </div>
+                    <div class="field">
+                        <label for="location-details">تفاصيل إضافية عن المكان</label>
+                        <input type="text" id="location-details" name="locationDetails" placeholder="مثال: قرب المكتبة">
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="card-title">صور الغرض</h2>
+                <p class="card-description">أرفق صورًا تساعد على التعرف على الغرض إن توفرت.</p>
+                <div class="upload-box">
+                    <div class="upload-symbol">↑</div>
+                    <strong>اختر الصور من جهازك</strong>
+                    <p>الصور بصيغ JPEG أو PNG أو WebP. يمكنك اختيار عدة صور.</p>
+                    <input type="file" class="file-input" id="lost-images" name="images" accept="image/jpeg,image/png,image/webp" multiple>
+                    <p class="form-note">اختيار الصور اختياري، ويمكن فرض حد للحجم وعدد الصور عند الربط مع الخادم.</p>
+                </div>
+            </section>
+
+            <div class="button-row">
+                <button type="submit" class="btn btn-primary">إرسال بلاغ الفقدان</button>
+                <a href="reports.html" class="btn btn-outline">إلغاء</a>
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer"><div class="container">المفقودات | Lost &amp; Found</div></footer>
+</body>
+</html>

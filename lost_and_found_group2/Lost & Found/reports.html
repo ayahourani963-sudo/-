@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البلاغات | المفقودات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="reports.html" class="brand">
+                <span class="brand-icon">م</span>
+                <span class="brand-name"><strong>المفقودات</strong><small>Lost &amp; Found</small></span>
+            </a>
+            <nav class="nav-links">
+                <a href="reports.html" class="current">الرئيسية</a><a href="reports.html">البلاغات</a>
+                <a href="losts.html">تسجيل مفقود</a><a href="found.html">تسجيل معثور عليه</a>
+            </nav>
+            <div class="nav-tools"><a href="#" class="nav-login">حسابي</a></div>
+        </div>
+    </header>
+
+    <main class="container page">
+        <section class="page-heading">
+            <h1>بلاغات المفقودات والمعثورات</h1>
+            <p>استعرض البلاغات المسجلة، وابحث عن غرض يشبه ما فقدته أو اعثر على صاحب غرض وجدته.</p>
+        </section>
+
+        <div class="button-row" style="margin-top: 0; margin-bottom: 24px;">
+            <a href="losts.html" class="btn btn-primary">+ تسجيل غرض مفقود</a>
+            <a href="found.html" class="btn btn-orange">+ تسجيل غرض معثور عليه</a>
+        </div>
+
+        <section class="card">
+            <h2 class="card-title">ابحث في البلاغات</h2>
+            <p class="card-description">يمكنك تضييق النتائج باستخدام الكلمات أو نوع البلاغ.</p>
+            <form action="reports.html" method="get" class="filters">
+                <div class="field">
+                    <label for="search">كلمات البحث</label>
+                    <input type="search" id="search" name="q" placeholder="مثال: هاتف أسود">
+                </div>
+                <div class="field">
+                    <label for="report-type">نوع البلاغ</label>
+                    <select id="report-type" name="type">
+                        <option value="">جميع البلاغات</option><option value="lost">أغراض مفقودة</option><option value="found">أغراض معثور عليها</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="category">تصنيف الغرض</label>
+                    <select id="category" name="category">
+                        <option value="">جميع التصنيفات</option><option value="phone">هواتف</option><option value="wallet">محافظ</option>
+                        <option value="keys">مفاتيح</option><option value="bag">حقائب</option><option value="documents">وثائق</option><option value="other">أخرى</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">بحث</button>
+            </form>
+        </section>
+
+        <section class="reports-grid" aria-label="قائمة البلاغات">
+            <article class="report-card">
+                <div class="report-image">لا توجد صورة مرفقة</div>
+                <div class="report-content">
+                    <span class="badge badge-lost">غرض مفقود</span><h2>هاتف أسود</h2>
+                    <p>هاتف أسود، مع غطاء حماية داكن.</p>
+                    <div class="report-meta"><span class="badge badge-neutral">إلكترونيات</span></div>
+                    <p>المكان: دمشق</p><p>التاريخ: 2026-10-20</p>
+                    <a href="report-details.html?id=101" class="btn btn-primary">عرض التفاصيل</a>
+                </div>
+            </article>
+            <article class="report-card">
+                <div class="report-image">لا توجد صورة مرفقة</div>
+                <div class="report-content">
+                    <span class="badge badge-found">غرض معثور عليه</span><h2>محفظة بنية</h2>
+                    <p>محفظة جلدية بنية عُثر عليها في مكان عام.</p>
+                    <div class="report-meta"><span class="badge badge-neutral">محافظ</span></div>
+                    <p>المكان: دمشق</p><p>التاريخ: 2026-10-22</p>
+                    <a href="report-details.html?id=102" class="btn btn-primary">عرض التفاصيل</a>
+                </div>
+            </article>
+            <article class="report-card">
+                <div class="report-image">لا توجد صورة مرفقة</div>
+                <div class="report-content">
+                    <span class="badge badge-lost">غرض مفقود</span><h2>مجموعة مفاتيح</h2>
+                    <p>مجموعة مفاتيح مع حلقة معدنية.</p>
+                    <div class="report-meta"><span class="badge badge-neutral">مفاتيح</span></div>
+                    <p>المكان: درعا</p><p>التاريخ: 2026-10-24</p>
+                    <a href="report-details.html?id=103" class="btn btn-primary">عرض التفاصيل</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="container">المفقودات | Lost &amp; Found</div></footer>
+</body>
+</html>
